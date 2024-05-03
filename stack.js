@@ -8,6 +8,7 @@ class Stack {
         this.maxSize = 100;
         // Storage
         this.stack = [];
+        // Initial index
         this.top = -1;
     }
 
@@ -21,8 +22,32 @@ class Stack {
         return true;
     }
 
+    // Pop value from top
+    pop(){
+        // Check that the stack is empty
+        if(this.isEmpty()) return null;
 
+        this.top--;
+        return this.stack.pop()
+    }
+
+    // Check that the stack is full
+    isFull(){
+        return this.top === this.maxSize - 1;
+    }
+
+    // Check that the stack is empty
+    isEmpty() {
+        return this.top === -1;
+    }
 
 }
+
+const stack = new Stack();
+stack.push(1);
+stack.push(2);
+console.log(stack.pop());
+stack.push(3);
+console.log(stack);
 
 module.exports = Stack;
