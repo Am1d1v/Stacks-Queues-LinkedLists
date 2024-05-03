@@ -31,6 +31,13 @@ class Stack {
         return this.stack.pop()
     }
 
+    // Get the last element of the array
+    peek(){
+        if(this.isEmpty()) return null;
+
+        return this.stack[this.top];
+    }
+
     // Check that the stack is full
     isFull(){
         return this.top === this.maxSize - 1;
@@ -42,12 +49,5 @@ class Stack {
     }
 
 }
-
-const stack = new Stack();
-stack.push(1);
-stack.push(2);
-console.log(stack.pop());
-stack.push(3);
-console.log(stack);
 
 module.exports = Stack;
