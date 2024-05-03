@@ -26,10 +26,22 @@ class Queue {
         return this.tail - this.head;
     }
 
+    // Check that the queue is empty
+    isEmpty(){
+        return this.getLength() === 0;
+    }
+
     // Check that the queue is full
     isFull(){
         return  this.getLength() === this.maxSize;
     }
 }
+
+const queue = new Queue();
+queue.enqueue('a');
+queue.enqueue('b');
+queue.enqueue('c');
+console.log(queue);
+
 
 module.exports = Queue;
