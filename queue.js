@@ -21,6 +21,18 @@ class Queue {
         return true;
     }
 
+    // Remove item from the queue
+    dequeue(){
+        const item = this.queue[this.head];
+        this.head++
+        return item;
+    }
+
+    // Get the value of the first element in the queue
+    peek(){
+        return this.queue[this.head];
+    }
+
     // Get length of the queue
     getLength(){
         return this.tail - this.head;
